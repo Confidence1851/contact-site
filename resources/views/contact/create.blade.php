@@ -2,21 +2,30 @@
 <html>
 <head>
 <title>Phone|Create</title>
+<link rel="stylesheet" href="/app.css">
+
 
 
 
 </head>
 <body style="text-align:center">
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <h1>Create Contact</h1>
-     <h3><x-alert/></h3>
+     <h3 class="success"><x-alert/></h3>
     <form action="/upload" method="post">
     @csrf
-    Name:<input type="text" name="contactname"/><br><br>
+   <div class="b"> Name:<input type="text" name="contactname"/><br><br>
     Phone:<input type="number" name="phonenumber"/><br><br> 
     <input type= "submit", value="Create"/>
     </form>
-    <br>
-    <a href="/index">Back</a> 
+    
+   <button class="ibutton"><a href= "/index">Back</a></button>
+    
+   
 </body>
 </html>

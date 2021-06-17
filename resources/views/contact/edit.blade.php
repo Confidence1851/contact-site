@@ -4,8 +4,17 @@
 <title>Contacts| Edit</title>
 </head>
 <body style="text-align:center">
+<link rel="stylesheet" href="/app.css">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <h1>Edit Contacts</h1>
+    <h1>Edit Contacts</h1><br>
+
+    <h3 class="edit"><x-alert/></h3>
 
     
         <form action="/update" method="post">

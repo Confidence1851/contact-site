@@ -1,0 +1,73 @@
+body{
+
+    background:navy;
+    color:white;
+    max-width:600px;
+    margin:auto;
+    
+}
+
+input {
+    
+   
+   border:2px solid red ;
+   background-color: black;
+   color:whitesmoke;
+   border-radius: 4px;
+  }
+  
+
+  input[type=text] {
+    border:2px solid red ;
+    background-color: black;
+    background-image: url('user.png');
+    background-position: 1px 1px;
+    background-repeat: no-repeat;
+    padding: 2px 1px 4px 30px;
+}
+input[type=number] {
+    border:2px solid red ;
+    background-color: black;
+    background-image: url('call.png');
+    background-position: 1px 1px;
+    background-repeat: no-repeat;
+    padding: 2px 1px 4px 30px;
+
+    }
+
+    .ibutton {
+        border:2px solid red ;
+        background-color: black;
+        background-position: 1px 1px;
+        color:whitesmoke;
+        padding: 8px;
+        
+    
+        }
+
+    .success{
+
+        color:rgb(0, 128, 0);
+
+    }
+
+    .edit{
+
+        color:rgb(0, 128, 0);
+
+    }
+    
+*{
+
+    font-family: "Lucida Console", "Courier New", monospace;
+    
+
+}
+
+div.b {
+  line-height: 1.6;
+}
+    
+
+    
+   
