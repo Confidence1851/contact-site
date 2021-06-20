@@ -19,3 +19,20 @@ li{
 
   }
 
+  .h1{
+
+    text-align: center;
+    color:blue;
+
+  }
+
+  div.q{
+
+    line-height: 80%;
+  }
+
+  div.a{
+    line-height: 20%;
+    
+  }
+

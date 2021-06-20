@@ -17,7 +17,7 @@
 <br>
     <h1>Create Contact</h1>
      <h3 class="success"><x-alert/></h3>
-    <form action="/upload" method="post">
+    <form action="/upload" method="POST">
     @csrf
    <div class="b"> Name:<input type="text" name="contactname"/><br><br>
     Phone:<input type="number" name="phonenumber"/><br><br> 

@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\DB;
+
+
 
 class ContactController extends Controller
 {
     
-    public function index(){
+    public function list(){
         $contacts= contact::all();
-        return view('contact.index')->with(['contacts' => $contacts]);
+        return view('contact.list')->with(['contacts' => $contacts]);
+    
+        
+    
     
     }
 
@@ -18,7 +24,8 @@ class ContactController extends Controller
 
         
         return view ("contact.create");
-        $countcontact = $request->get('count');
+
+        
 
     
     }
@@ -26,7 +33,7 @@ class ContactController extends Controller
 
     public function upload(Request $request){
 
-                $request->validate([
+        $request->validate([
              'contactname' => 'required',
              'phonenumber' => 'required'
             ]);
@@ -34,12 +41,15 @@ class ContactController extends Controller
         $contact = contact::create($request->all(), [
             'contactname' => 'required|unique:posts|max:255',
             'phonenumber' => 'required'
-    
-        ]);
-        return redirect()->back()->with('success', "Contact Saved!");
+
+            ]);
+
+                
+        
+        return redirect('list')->with('success', "Contact Saved!");
 
     
-    }
+   }
     
     public function edit($id){
         $contact = contact::find($id);
@@ -47,22 +57,33 @@ class ContactController extends Controller
     
     }
 
-    public function update(Request $request){
-            $updatecontact = contact::find($request->id);
+     public function update(Request $request){
+
+            $updatecontact = contact::find($request->contact_id);
             $updatecontact -> contactname=$request->contactname;
             $updatecontact -> phonenumber=$request->phonenumber;
+             
+            
+        
             $updatecontact-> save();
-            return redirect('index')->with('success', "Contact updated successfully");
+            return redirect('list')->with('success', "Contact updated successfully");
 
     }
 
     public function delete($id){
         $contact = contact::find($id);
         $contact ->delete();
-        return redirect('index')->with('success', "Contact deleted successfully");
+        return redirect('list')->with('success', "Contact deleted successfully");
         }
 
+    
+               
+    
 
+    
+
+
+    
     
     
     

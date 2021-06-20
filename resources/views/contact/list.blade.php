@@ -20,11 +20,15 @@
     <h3>
     <br>
 
-       <button class="button"> <a href= "/create">Create</a></button>
+       
         <h3> <x-alert/></h3>
-    </h3>
+      <div class:"q"> Number of saved contact(s) {{$contacts->count()}}</div>
+    
+
+    
+
     @foreach($contacts as $contact)
-    <div class="a">  <li>
+    <div class:"a"><li>
             {{$contact->contactname}}
             {{$contact->phonenumber}}
          <button class="button">   <a href= "{{asset('/' . $contact->id . '/edit')}}">Edit</a></button>
@@ -32,6 +36,7 @@
         
         </li></div>
     @endforeach
+
 
 
 </body>

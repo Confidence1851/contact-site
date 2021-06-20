@@ -15,8 +15,8 @@ class contact extends Model
         'phonenumber',
         'completed'
     ];
+    }
 
-    
-}
+
 
 

@@ -14,14 +14,16 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/', function () {
+        return view('home');
+    });
 
-Route::get("index", [ContactController::class, 'index' ]);
+
+
+Route::get("list", [ContactController::class, 'list' ]);
 Route::get("create", [ContactController::class, 'create']);
 Route::post("upload", [ContactController::class, 'upload' ]);
 Route::get('/{id}/edit', [ContactController::class, 'edit' ]);
 Route::get('edit', [ContactController::class, 'edit' ]);
-Route::patch("update", [ContactController::class, 'update' ]);
+Route::patch("/update", [ContactController::class, 'update' ]);
 Route::get('/{id}/delete', [ContactController::class, 'delete' ]);
