@@ -29,7 +29,7 @@ class ContactController extends Controller
              'phonenumber' => 'required'
             ]);
 
-        $contact = Contact::create($request->all();
+        $contact = Contact::create($request->all());
         return redirect('list')->with('success', "Contact Saved!");
    }
     
