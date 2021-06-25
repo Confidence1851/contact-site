@@ -23,16 +23,12 @@ class ContactController extends Controller
 
     public function upload(Request $request){
 
-        $request->validate([
+       $contact = $request->validate([
              'contactname' => 'required',
              'phonenumber' => 'required'
             ]);
 
-        $contact = Contact::create($request->all(), [
-            'contactname' => 'required|unique:posts|max:255',
-            'phonenumber' => 'required'
-
-            ]);
+        Contact::create($contact);
         return redirect('list')->with('success', "Contact Saved!");
    }
     
