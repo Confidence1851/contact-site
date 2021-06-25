@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use app\Models\Contact;
+
 
 
 class ContactController extends Controller
