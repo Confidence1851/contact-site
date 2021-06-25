@@ -10,12 +10,8 @@ class Contact extends Model
     use HasFactory;
         public $timestamps=false;
 
-    protected $fillable = [
-        'contactname',
-        'phonenumber',
-        'completed'
-    ];
-    }
+    protected $guarded = [];
+}
 
 
 
