@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     
     public function list(){
-        $contacts= contact::all();
+        $contacts= Contact::all();
         return view('contact.list')->with(['contacts' => $contacts]);
     
         
@@ -38,7 +38,7 @@ class ContactController extends Controller
              'phonenumber' => 'required'
             ]);
 
-        $contact = contact::create($request->all(), [
+        $contact = Contact::create($request->all(), [
             'contactname' => 'required|unique:posts|max:255',
             'phonenumber' => 'required'
 
@@ -52,26 +52,26 @@ class ContactController extends Controller
    }
     
     public function edit($id){
-        $contact = contact::find($id);
+        $contact = Contact::find($id);
         return view('contact.edit')->with(['id' => $id, 'contact' => $contact]);
     
     }
 
      public function update(Request $request){
 
-            $updatecontact = contact::find($request->contact_id);
+            $updatecontact = Contact::find($request->contact_id);
             $updatecontact -> contactname=$request->contactname;
             $updatecontact -> phonenumber=$request->phonenumber;
              
             
         
-            $updatecontact-> save();
+            $updatecontact->save();
             return redirect('list')->with('success', "Contact updated successfully");
 
     }
 
     public function delete($id){
-        $contact = contact::find($id);
+        $contact = Contact::find($id);
         $contact ->delete();
         return redirect('list')->with('success', "Contact deleted successfully");
         }
